@@ -48,6 +48,22 @@ FROM
 
 * `WHERE billing IS NULL / IS NOT NULL`
 
+* When filtering strings, you need to wrap your value in 'single quotes'
+
+* In Microsoft SQL Server dates are by default YYY-MM-DD and should be enclosed in ''
+
+
+## MAIN
+
+```sql
+SELECT
+FROM 
+WHERE
+ORDER BY
+```
+
+
+
 
 
 
