@@ -48,6 +48,20 @@ FROM
 
 * `WHERE billing IS NULL / IS NOT NULL`
 
+* `WHERE .... AND ....` : for multiple conditions and where neceaasry use parenthese. Other operators: `OR `, `IN`, `LIKE 'a%'`, 
+
+Example:
+```sql
+SELECT song
+FROM songlist
+WHERE 
+    artist = 'Green Day' 
+    AND (
+        release_year = 1994
+        OR release_year > 2000
+    )
+```
+
 * When filtering strings, you need to wrap your value in 'single quotes'
 
 * In Microsoft SQL Server dates are by default YYY-MM-DD and should be enclosed in ''
@@ -61,6 +75,38 @@ FROM
 WHERE
 ORDER BY
 ```
+
+## AGGREGATING DATA
+
+* Calculate total amount in a column: `SELECT SUM(col) AS colsum_alias`
+
+* Count number of rows in a column: `SELECT COUNT(col) AS colcount_alias`
+
+* Count number of unique values ina. column: `SELECT COUNT(DISTINCT col) as unique_count_affected`
+
+* Minimum, maximum, average value in a column:`SELECT MIN() ... AS / MAX() ... AS / AVG()...AS `
+
+
+## WORKING WITH STRINGS
+
+* `SELECT LEN(col) AS ...` : length of a column
+
+*  `SELECT LEFT(col, 5) AS first_five_left`: extract a number of characters from beginning of a string 
+
+* `SELECT RIGHT(col, 5) AS last_five_right`: extract a number of characters from end of a string 
+
+* `SELECT CHARINDEX('_', url) AS char_location`: find underscore location in url column
+
+* `SELECT SUBSTRING(col, 12, 2) AS target_section`: select two characters after 12 characters
+
+* `SELECT REPLACE(col, '_', '-') AS replace_with_hyphen`
+
+## GROUPING AND HAVING
+
+
+
+
+
 
 
 
